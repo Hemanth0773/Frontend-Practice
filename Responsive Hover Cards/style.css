@@ -1,0 +1,222 @@
+/* font */
+@font-face {
+    font-family: "Gilroy2";
+    src: url("./fonts/Gilroy-ExtraBold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy1";
+    src: url("./fonts/Gilroy-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* variables */
+:root{
+    --first-color:hsl(207, 46%, 37%);
+    --title-color: hsl(0, 0%, 0%);
+    --text-color:hsl(0, 0%, 0%);
+    --body-color:hsl(0, 0%, 95%);
+    --container-color:hsl(0, 0%, 100%);
+    
+    /*   Font and typography    */
+    /*  .5rem = 8px | 1rem = 16px   */ 
+    
+    --body-font: "Gilroy2",sans-serif;
+    --h2-font-size:1.25rem;
+    --samll-font-size: .813rem;
+}
+
+
+/* Base (Bolier plate) */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    min-height: 100vh;
+}
+body{
+    background: linear-gradient(rgb(0, 140, 255) 20%,white);
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* responsive typography */
+@media screen and (min-width:1120px) {
+    :root{
+        --h2-font-size:1.5rem;
+    --samll-font-size: .875rem;
+    }
+}
+
+
+/* card */
+
+.container{
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+}
+
+.card_container{
+    display: grid;
+    row-gap: 3.5rem;
+}
+
+.card_article{
+    position: relative;
+    overflow: hidden;
+}
+
+.card_img{
+    width: 328px;
+    border-radius: 1.5rem;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}
+
+.card_data{
+    width: 280px;
+    background-color: var(--container-color);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 20px hsla(0, 0%, 0%, .15);
+    border-radius: 1.5rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+
+.card_description{
+    display: block;
+    font-size: var(--samll-font-size);
+    margin-bottom: .25rem;
+    font-family: "Gilroy1";
+}
+
+.card_title{
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: .75rem;
+}
+
+.card_button{
+    text-decoration: none;
+    font-size: var(--samll-font-size);
+    color: var(--first-color);
+}
+
+.card_button:hover{
+    text-decoration: underline;
+}
+
+
+/* naming animation in hover */
+.card_article:hover .card_data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.card_article:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.card_article:not(:hover){
+    animation: show-overflow 2s forwards;
+}
+
+.card_article:not(:hover) .card_data{
+    animation: remove-data 2s forwards;
+}
+
+
+/* card animation */
+@keyframes show-data{
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data{
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow{
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    80%{
+        overflow: hidden;
+    }
+}
+
+/* breakpoints */
+/* for small devices */
+@media screen and (max-width: 340px){
+    .container{
+        margin-inline: 1rem;
+    }
+
+    .card_data{
+        width: 250px;
+        padding: 1rem;
+    }
+}
+
+/* for medium screens */
+@media screen and (min-width: 768px){
+    .card_container{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+    }
+}
+
+/* for large screens */
+@media screen and (min-width:1120px){
+    .container{
+        height: 100vh;
+    }
+    .card_container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card_img{
+        width: 348px ;
+    }
+    .card_data{
+        width: 316px;
+        padding-inline: 2.5rem;
+    }
+}

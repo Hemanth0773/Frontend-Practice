@@ -1,0 +1,216 @@
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("./fonts/HelveticaNeueBlack.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy1";
+    src: url("./fonts/Gilroy-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy2";
+    src: url("./fonts/Gilroy-ExtraBold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gilroy2;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #D5FF40;
+}
+
+nav{
+    padding: 60px 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8em;
+}
+
+nav h2{
+    font-family: Gilroy2;
+    font-size: 29px;
+}
+
+nav a{
+    text-decoration: none;
+    color:indigo;
+    font-size: 30px;
+    font-family: Gilroy1; 
+}
+
+section {
+    padding: 30px 89px;
+}
+
+section .hero-text1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+
+.hero-text1 {
+    font-size: 140px;
+    text-transform: uppercase;
+    margin-bottom: -7rem;
+}
+
+.hero-text1 .video{
+    height: 130px;
+    width: 500px;
+    background-color: black;
+    border: 4px solid rgba(172, 255, 47, 0.628);
+    border-radius: 100px;
+    margin-top: 70px;
+    background-image: url(https://www.canvo.in/cdn/shop/products/2-Canvo.inCopyrighted_16ae07d1-2f7b-4ed1-aad4-25172de8a233.jpg?v=1747726209);
+    background-size: 140%;
+    background-position: center;
+    padding: 7px;
+}
+
+.video .play{
+    height: 110px;
+    width: 110px;
+    background-color: rgb(0, 0, 0);
+    border: 4px solid rgba(105, 105, 105, 0.887);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play i{
+    color: #D5FF40;
+    font-size: 70px;
+    margin-left: 10px;
+}
+
+section .hero-text2{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+}
+
+.hero-text2{
+    font-size: 140px;
+    text-transform: uppercase;
+}
+
+.hero-text2 p{
+    font-family: Gilroy1;
+    font-size: 33px;
+    width: 700px;
+    margin-bottom: 70px;
+    color:indigo;
+    text-align: right;
+}
+
+.hero-image{
+    height: 1000px;
+    width: 90%;
+    background-color: transparent;
+    margin-left: 5%;
+    border-top-left-radius: 180px;
+    border-top-right-radius: 180px;
+    background-image: url(https://cdn.prod.website-files.com/64e7340b7d897bf0c7179e52/64ebbe14414665ada632fb9e_hero%20big%20image-min.png);
+    background-size: cover;
+    background-position:center;
+    position: relative;
+    margin-top: 100px;
+}
+
+.arrow{
+    height: 200px;
+    width: 300px;
+    border-radius: 200px;
+    background-color: black;
+    position: absolute;
+    top: -5%;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgba(105, 105, 105, 0.887);
+}
+
+.arrow i{
+    font-size: 150px ;
+    color: #D5FF40 ;
+}
+
+.end-banner{
+    width: 100%;
+    height: 170px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.end-banner p{
+    text-transform: uppercase;
+    color: #D5FF40;
+    font-size: 90px ;
+    font-family: Helvetica Neue;
+}
+
+.achievement{
+    display: flex;
+    align-items: flex-start;
+    justify-content:end;
+    padding: 0px 83px;
+}
+
+.achievement .box1{
+    width: 380px;
+    height: 70px;
+    border-radius: 100px;
+    border: 2px solid black;
+    padding-top: 3px;
+}
+
+.achievement .box2{
+    width: 380px;
+    height: 70px;
+    border-radius: 100px;
+    border: 2px solid black;
+    margin-left: 30px;
+    padding-top: 3px;
+}
+
+.achievement i{
+    font-size: 50px;
+    margin-left: 15px;
+}
+
+.achievement p{
+    text-align: center;
+    margin-top: -43px ;
+    font-size: 26px;
+    font-family: Gilroy1;
+    color: indigo;
+}
