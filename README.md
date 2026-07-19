@@ -18,5 +18,4 @@ A responsive card component built to practice CSS Grid, variables, keyframe anim
 
 - HTML5
 - CSS3
-- JavaScript *(Coming Soon)*
 - Git & GitHub
